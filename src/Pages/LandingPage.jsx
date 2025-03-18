@@ -40,7 +40,7 @@ const teamMembers = [
       {/* Text Content */}
       <div className="relative flex flex-col items-center justify-center h-full text-yellow-400 text-center p-4">
         <h1 className="text-4xl md:text-6xl font-extrabold">
-          "Push Yourself, <span className="text-white">Becausess No One Else Will!"</span>
+          "Push Yourself, <span className="text-white">Because No One Else Will!"</span>
         </h1>
         <p className="text-lg md:text-2xl mt-4 text-white">
           Train Hard. Stay Strong. Keep Moving Forward.
@@ -51,7 +51,7 @@ const teamMembers = [
       <div className="md:w-1/2 flex justify-center md:justify-center">
     <img
       className="h-120 rounded-lg mx-auto md:mx-0"
-      src="/public/gym6.jpg"
+      src="/gym6.jpg"
       alt="Gym Equipment"
     />
   </div>
@@ -127,7 +127,7 @@ const teamMembers = [
         {/* Class Card 1 */}
         <div className="relative">
           <img
-            src="/public/book4.jpg"
+            src="/book4.jpg"
             alt="Crossfit Beginners Class"
             className="w-full h-full object-cover"
           />
@@ -142,7 +142,7 @@ const teamMembers = [
         {/* Class Card 2 */}
         <div className="relative">
           <img
-            src="/public/book1.jpg"
+            src="/book1.jpg"
             alt="Crossfit Gymnastics"
             className="w-full h-full object-cover"
           />
