@@ -4,22 +4,30 @@ import Footer from "../Components/Footer";
 import { RxHalf2 } from "react-icons/rx";
 import { FaRegHourglassHalf } from "react-icons/fa6";       
 
-const images = ["/gym1.jpg", "/gym2.jpg", "/gym3.jpg"]; // List of images
-const teamMembers = [
-    { id: 1, img: "/trainer1.jpg", name: "John Doe", role: "Coach" },
-    { id: 2, img: "/trainer2.jpg", name: "Sarah Lee", role: "Trainer" },
-    { id: 3, img: "/trainer3.jpg", name: "Michael Smith", role: "Strength Coach" },
-    { id: 4, img: "/trainer4.jpg", name: "Jessica Brown", role: "Yoga Instructor" },
-    { id: 5, img: "/trainer5.jpg", name: "Daniel Wilson", role: "Nutritionist" },
-    { id: 6, img: "/trainer6.jpg", name: "Sophia Miller", role: "Personal Trainer" },
-    { id: 7, img: "/trainer7.jpg", name: "David Johnson", role: "CrossFit Coach" },
-    { id: 8, img: "/trainer8.webp", name: "David Johnson", role: "CrossFit Coach" },
-  ];
   
   const LandingPage = () => {
-      const [hovered, setHovered] = useState(null);
-      const [currentImage, setCurrentImage] = useState(0);
+    const teamMembers = [
+      { id: 1, img: "/trainer1.jpg", name: "John Doe", role: "Coach" },
+      { id: 2, img: "/trainer2.jpg", name: "Sarah Lee", role: "Trainer" },
+      { id: 3, img: "/trainer3.jpg", name: "Michael Smith", role: "Strength Coach" },
+      { id: 4, img: "/trainer4.jpg", name: "Jessica Brown", role: "Yoga Instructor" },
+      { id: 5, img: "/trainer5.jpg", name: "Daniel Wilson", role: "Nutritionist" },
+      { id: 6, img: "/trainer6.jpg", name: "Sophia Miller", role: "Personal Trainer" },
+      { id: 7, img: "/trainer7.jpg", name: "David Johnson", role: "CrossFit Coach" },
+      { id: 8, img: "/trainer8.webp", name: "David Johnson", role: "CrossFit Coach" },
+    ];
+  const [hovered, setHovered] = useState(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
 
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
+  const images = ["/gym1.jpg", "/gym2.jpg", "/gym3.jpg"]; // List of images
+
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,23 +37,29 @@ const teamMembers = [
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
+
+
   return (
     <div
-      className="relative h-180 w-fit-screen bg-cover bg-center transition-all duration-1000 ease-in-out"
-      style={{ backgroundImage: `url(${images[currentImage]})` }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-opacity-50"></div>
+    className="relative h-180 w-full bg-cover bg-center transition-all duration-1000 ease-in-out"
+    style={{
+      backgroundImage: `url(${images[currentImage]})`,
+      transition: 'background-image 1s ease-in-out', // Smooth transition for background change
+    }}
+  >
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-opacity-50"></div>
 
-      {/* Text Content */}
-      <div className="relative flex flex-col items-center justify-center h-full text-yellow-400 text-center p-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold">
-          "Push Yourself, <span className="text-white">Because No One Else Will!"</span>
-        </h1>
-        <p className="text-lg md:text-2xl mt-4 text-white">
-          Train Hard. Stay Strong. Keep Moving Forward.
-        </p>
-      </div>
+    {/* Text Content */}
+    <div className="relative flex flex-col items-center justify-center h-full text-yellow-400 text-center p-4">
+      <h1 className="text-4xl md:text-6xl font-extrabold">
+        "Push Yourself, <span className="text-white">Because No One Else Will!</span>"
+      </h1>
+      <p className="text-lg md:text-2xl mt-4 text-white">
+        Train Hard. Stay Strong. Keep Moving Forward.
+      </p>
+    </div>
+  
       <div className="bg-black text-white p-8 flex flex-col md:flex-row items-center md:items-start">
       {/* Left Side - Image */}
       <div className="md:w-1/2 flex justify-center md:justify-center">
