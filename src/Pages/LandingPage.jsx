@@ -40,7 +40,7 @@ const teamMembers = [
       {/* Text Content */}
       <div className="relative flex flex-col items-center justify-center h-full text-yellow-400 text-center p-4">
         <h1 className="text-4xl md:text-6xl font-extrabold">
-          "Push Yourself, <span className="text-white">Because No One Else Will!"</span>
+          "Push Yourself, <span className="text-white">Becausess No One Else Will!"</span>
         </h1>
         <p className="text-lg md:text-2xl mt-4 text-white">
           Train Hard. Stay Strong. Keep Moving Forward.
