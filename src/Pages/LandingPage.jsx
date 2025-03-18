@@ -27,7 +27,7 @@ import { FaRegHourglassHalf } from "react-icons/fa6";
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
-  const images = ["/gym1.jpg", "/gym2.jpg", "/gym3.jpg"]; // List of images
+  const images = ["/gym2.jpg"]; // List of images
 
 
 
