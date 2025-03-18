@@ -7,6 +7,8 @@ import { FaRegHourglassHalf } from "react-icons/fa6";
   
   const LandingPage = () => {
   const [hovered, setHovered] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
+
   const teamMembers = [
     { id: 1, img: "/trainer1.jpg", name: "John Doe", role: "Coach" },
     { id: 2, img: "/trainer2.jpg", name: "Sarah Lee", role: "Trainer" },
@@ -27,7 +29,6 @@ import { FaRegHourglassHalf } from "react-icons/fa6";
 
   const images = ["/gym1.jpg", "/gym2.jpg", "/gym3.jpg"]; // List of images
 
-  const [currentImage, setCurrentImage] = useState(0);
 
 
 
