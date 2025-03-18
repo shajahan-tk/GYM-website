@@ -6,17 +6,17 @@ import { FaRegHourglassHalf } from "react-icons/fa6";
 
   
   const LandingPage = () => {
-    const teamMembers = [
-      { id: 1, img: "/trainer1.jpg", name: "John Doe", role: "Coach" },
-      { id: 2, img: "/trainer2.jpg", name: "Sarah Lee", role: "Trainer" },
-      { id: 3, img: "/trainer3.jpg", name: "Michael Smith", role: "Strength Coach" },
-      { id: 4, img: "/trainer4.jpg", name: "Jessica Brown", role: "Yoga Instructor" },
-      { id: 5, img: "/trainer5.jpg", name: "Daniel Wilson", role: "Nutritionist" },
-      { id: 6, img: "/trainer6.jpg", name: "Sophia Miller", role: "Personal Trainer" },
-      { id: 7, img: "/trainer7.jpg", name: "David Johnson", role: "CrossFit Coach" },
-      { id: 8, img: "/trainer8.webp", name: "David Johnson", role: "CrossFit Coach" },
-    ];
   const [hovered, setHovered] = useState(null);
+  const teamMembers = [
+    { id: 1, img: "/trainer1.jpg", name: "John Doe", role: "Coach" },
+    { id: 2, img: "/trainer2.jpg", name: "Sarah Lee", role: "Trainer" },
+    { id: 3, img: "/trainer3.jpg", name: "Michael Smith", role: "Strength Coach" },
+    { id: 4, img: "/trainer4.jpg", name: "Jessica Brown", role: "Yoga Instructor" },
+    { id: 5, img: "/trainer5.jpg", name: "Daniel Wilson", role: "Nutritionist" },
+    { id: 6, img: "/trainer6.jpg", name: "Sophia Miller", role: "Personal Trainer" },
+    { id: 7, img: "/trainer7.jpg", name: "David Johnson", role: "CrossFit Coach" },
+    { id: 8, img: "/trainer8.webp", name: "David Johnson", role: "CrossFit Coach" },
+  ];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
@@ -29,13 +29,6 @@ import { FaRegHourglassHalf } from "react-icons/fa6";
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
 
 
 
